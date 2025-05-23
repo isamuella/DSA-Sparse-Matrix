@@ -5,7 +5,7 @@ class SparseMatrix:
     def __init__(self, num_rows, num_cols):
         self.rows = num_rows
         self.cols = num_cols
-        self.data = {}  # Using nested dictionaries instead of Map
+        self.data = {}
 
     @staticmethod
     def from_file(file_path):
@@ -39,7 +39,7 @@ class SparseMatrix:
             if row in self.data:
                 if col in self.data[row]:
                     del self.data[row][col]
-                if not self.data[row]:  # If row is empty
+                if not self.data[row]:
                     del self.data[row]
         else:
             if row not in self.data:
